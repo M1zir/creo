@@ -1,8 +1,8 @@
 gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
 
 // Animate the SVG icon
-gsap.set("#logo line", { drawSVG: 0 });
-gsap.to("#logo line", {
+gsap.set("#Layer_2 line", { drawSVG: 0 });
+gsap.to("#Layer_2 line", {
     drawSVG: "100%",
     duration: 1,
     stagger: 0.2,

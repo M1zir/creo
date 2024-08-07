@@ -1,0 +1,27 @@
+gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
+
+// Animate the SVG icon
+gsap.set("#logo line", { drawSVG: 0 });
+gsap.to("#logo line", {
+    drawSVG: "100%",
+    duration: 1,
+    stagger: 0.2,
+    ease: "power2.inOut"
+});
+
+const pages = document.querySelectorAll(".page");
+
+pages.forEach((page, index) => {
+    gsap.from(page.children, {
+        scrollTrigger: {
+            trigger: page,
+            start: "top center",
+            end: "bottom center",
+            toggleActions: "play none none reverse"
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power2.out"
+    });
+});
